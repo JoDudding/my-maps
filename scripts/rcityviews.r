@@ -17,12 +17,20 @@ list_cities(match = 'Auckland')
 
 list_cities(match = 'Pauanui')
 
-#--- create custom for Pauanui to better center ---
+list_cities(match = 'Ngatea')
+
+#--- create custom for places to better center ---
 
 pauanui <- new_city(name = 'Pauanui',
   country = 'New Zealand',
   lat = -37.019,
   long = 175.86,
+  method = "osm")
+
+ngatea <- new_city(name = 'Ngatea',
+  country = 'New Zealand',
+  lat = -37.276, 
+  long = 175.494,
   method = "osm")
 
 #--- function to save ---
@@ -38,6 +46,47 @@ gg_save <- function(save_name, plot = last_plot(), dpi = 100) {
   )
 }
 
+#--- personalise theme ---
+
+jo_theme <- list(
+  colors = list(
+    background = "#232323",
+    water = "#232323",
+    landuse = "#232323",
+    contours = "#232323",
+    streets = "#d7b174",
+    rails = c("#d7b174", "#232323"),
+    buildings = "#232323",
+    text = "#ffffff",
+    waterlines = "#232323"
+  ),
+  font = list(
+    family = "serif",
+    face = "bold",
+    scale = 1,
+    append = "\u2014"
+  ),
+  size = list(
+    borders = list(
+      contours = 0.15,
+      water = 0.4,
+      canal = 0.5,
+      river = 0.6
+    ),
+    streets = list(
+      path = 0.2,
+      residential = 0.3,
+      structure = 0.35,
+      tertiary = 0.4,
+      secondary = 0.5,
+      primary = 0.6,
+      motorway = 0.8,
+      rails = 0.65,
+      runway = 3
+    )
+  )
+)
+
 #--- pauanui maps ---
 
 p_pauanui  <- cityview(name = pauanui, zoom = 1.2, theme = 'vintage')
@@ -52,6 +101,12 @@ gg_save('Pauanui-bright', p_pauanui3)
 gg_save('Pauanui-delftware', p_pauanui4)
 gg_save('Pauanui-modern', p_pauanui5)
 
+
+#--- ngatea maps ---
+
+p_ngatea  <- cityview(name = ngatea, zoom = 2, theme = 'delftware', border = 'circle')
+
+gg_save('Ngatea-delftware', p_ngatea)
 
 #--- auckland maps ---
 
