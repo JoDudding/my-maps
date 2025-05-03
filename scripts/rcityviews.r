@@ -50,20 +50,20 @@ gg_save <- function(save_name, plot = last_plot(), dpi = 100) {
 
 jo_theme <- list(
   colors = list(
-    background = "#232323",
-    water = "#232323",
-    landuse = "#232323",
-    contours = "#232323",
-    streets = "#d7b174",
-    rails = c("#d7b174", "#232323"),
-    buildings = "#232323",
+    background = "#6800A8FF",
+    water = "#6800A8FF",
+    landuse = "#6800A8FF",
+    contours = "#6800A8FF",
+    streets = "#F9973FFF",
+    rails = c("#F9973FFF", "#6800A8FF"),
+    buildings = "#6800A8FF",
     text = "#ffffff",
-    waterlines = "#232323"
+    waterlines = "#6800A8FF"
   ),
   font = list(
     family = "serif",
     face = "bold",
-    scale = 1,
+    scale = 0,
     append = "\u2014"
   ),
   size = list(
@@ -94,12 +94,14 @@ p_pauanui2 <- cityview(name = pauanui, zoom = 1.2, theme = "rouge")
 p_pauanui3 <- cityview(name = pauanui, zoom = 1.2, theme = "bright")
 p_pauanui4 <- cityview(name = pauanui, zoom = 1.2, theme = "delftware")
 p_pauanui5 <- cityview(name = pauanui, zoom = 1.2, theme = "modern")
+p_pauanui6 <- cityview(name = pauanui, zoom = 1.2, theme = jo_theme)
 
 gg_save('Pauanui-base', p_pauanui)
 gg_save('Pauanui-rouge', p_pauanui2)
 gg_save('Pauanui-bright', p_pauanui3)
 gg_save('Pauanui-delftware', p_pauanui4)
 gg_save('Pauanui-modern', p_pauanui5)
+gg_save('Pauanui-custom', p_pauanui6)
 
 
 #--- ngatea maps ---
