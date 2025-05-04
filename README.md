@@ -2,6 +2,10 @@
 
 ## [rcityviews](https://github.com/koenderks/rcityviews)
 
-![Pauanui](outputs/Pauanui-base.png)
+Using the [rcityviews (github.com/koenderks/rcityviews)](https://github.com/koenderks/rcityviews) package.
 
-![Ngatea](outputs/Ngatea-delftware.png)
+![](outputs/Pauanui-base.png)
+
+![](outputs/Ngatea-delftware.png)
+
+![](outputs/Hamilton-East-custom.png)
